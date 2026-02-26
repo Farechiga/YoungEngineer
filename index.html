@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic Math Adventure</title>
     <style>
+        /* --- LOGO SECTION START --- */
+        #puppy-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px; /* Adjust size as needed */
+            height: auto;
+            z-index: 10;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+        /* --- LOGO SECTION END --- */
+    
+        #game-container {
+            /* This ensures the puppy doesn't overlap on small screens */
+            position: relative; 
+            background: rgba(255, 255, 255, 0.9);
         :root {
             --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #9b59b6);
         }
@@ -102,7 +118,12 @@
     </style>
 </head>
 <body>
-
+<img src="assets/BernadoodleLogo.png" id="puppy-logo" alt="Math Puppy Mascot">
+<div id="game-container">
+    <div id="question-box">
+        <h2 id="question-text">Loading magic problems...</h2>
+        </div>
+</div>
 <div id="game-container">
     <div id="question-box">
         <h2 id="question-text">Loading magic problems...</h2>
