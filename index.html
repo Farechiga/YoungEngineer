@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young Engineer</title>
+    <title>Young Engineer Math</title>
     <style>
         :root {
+            --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #9b59b6);
+        }
 
-        /* --- PUP LOGO --- */
+        /* --- PUP LOGO FIX --- */
         #puppy-logo {
-            position: fixed; /* 'fixed' keeps from moving if the card shakes */
+            position: fixed; 
             top: 20px;
             left: 20px;
-            width: 150px;
-            z-index: 9999; /* Higher number to stay on top! */
-            mix-blend-mode: multiply; /* Removes the white box background */
-        }
-            
-            --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #9b59b6);
+            width: 140px;
+            z-index: 9999; /* This keeps him on top of the gradient */
+            mix-blend-mode: multiply; /* Removes white background */
         }
 
         body, html {
             margin: 0; padding: 0; height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             overflow: hidden; display: flex;
             justify-content: center; align-items: center;
-        }
-
-        body {
             background: var(--bg-gradient);
             background-size: 400% 400%;
             animation: gradientBG 21s ease infinite;
@@ -40,36 +36,31 @@
         }
 
         #game-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem; border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-            text-align: center; max-width: 600px; width: 90%;
-            transition: all 0.3s ease; position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem; border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            text-align: center; max-width: 650px; width: 90%;
+            position: relative; z-index: 10;
         }
 
         h2 { color: #333; font-size: 1.8rem; margin-bottom: 2rem; line-height: 1.4; }
 
         input {
-            font-size: 3rem; width: 150px; padding: 10px;
-            border: 4px solid #ddd; border-radius: 15px;
+            font-size: 3rem; width: 160px; padding: 10px;
+            border: 5px solid #eee; border-radius: 20px;
             text-align: center; outline: none; transition: border-color 0.3s;
         }
         input:focus { border-color: #e73c7e; }
 
-        .time-input { width: 85px; }
-        .separator { font-size: 3rem; font-weight: bold; margin: 0 5px; }
+        .time-input { width: 90px; }
+        .separator { font-size: 3rem; font-weight: bold; margin: 0 10px; }
 
-        /* --- ENGINEERING HINT --- */
         #hint-box {
-            display: none; background: #f0f8ff; border: 2px dashed #23a6d5;
-            border-radius: 15px; padding: 15px; margin-top: 20px;
-            text-align: left; font-family: 'Courier New', Courier, monospace;
+            display: none; background: #f0faff; border: 2px dashed #23a6d5;
+            border-radius: 20px; padding: 20px; margin-top: 25px;
+            text-align: left; font-family: 'Courier New', monospace;
         }
-        #hint-box h4 { margin: 0 0 10px 0; color: #23a6d5; text-transform: uppercase; }
-        .step { margin-bottom: 5px; font-size: 0.9rem; color: #444; }
 
-        #progress { margin-top: 2rem; font-weight: bold; color: #888; }
-        
         .shake { animation: shake 0.5s ease-in-out; }
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
@@ -83,21 +74,21 @@
 <img src="assets/BernadoodleLogo.png" id="puppy-logo" alt="Math Puppy Mascot">
 
 <div id="game-container">
-    <h2 id="question-text">Loading...</h2>
+    <h2 id="question-text">Loading magic problems...</h2>
     
-    <div id="input-area" class="input-wrapper" style="display:flex; justify-content:center; align-items:center;">
+    <div id="input-area" style="display:flex; justify-content:center; align-items:center; min-height: 100px;">
         </div>
 
     <div id="hint-box">
-        <h4>🛠 Engineering Breakdown:</h4>
-        <div id="hint-steps"></div>
+        <h4 style="margin:0; color:#23a6d5;">🛠 ENGINEERING BREAKDOWN:</h4>
+        <div id="hint-steps" style="margin-top:10px; line-height:1.5;"></div>
     </div>
 
-    <div id="progress">Question 1 of 5</div>
+    <div id="progress" style="margin-top: 2rem; font-weight: bold; color: #aaa;">Question 1 of ...</div>
 </div>
 
 <script>
-    const questions = [
+ const questions = [
         { 
             type: 'number', 
             text: "What number is 3 hundreds, 14 tens, and 2 ones?", 
@@ -115,7 +106,7 @@
             text: "A square garden has 7 rows of 7 flowers. How many flowers are there?", 
             answer: "49",
             steps: ["This is a Perfect Square!", "Multiply 7 x 7.", "7, 14, 21, 28, 35, 42, 49!"]
-        }
+        },
         { 
             type: 'time', 
             text: "The library opens at 9:00 AM. If you arrive 45 minutes late, what time is it?", 
@@ -205,7 +196,7 @@
             text: "You have an appointment at 4:10. You arrive at 3:55. How many minutes early are you? (Enter as 0:MM)", 
             answerH: "0", answerM: "15",
             steps: ["From 3:55, it takes 5 minutes to get to 4:00.", "From 4:00, it takes 10 minutes to get to 4:10.", "Add those two small jumps together."]
-        }
+        },
         { 
             type: 'number', 
             text: "A sticker costs 45 cents. You pay with 2 quarters. How much change should you get? (Enter as cents)", 
@@ -295,7 +286,7 @@
             text: "If you swap 100 pennies for quarters, how many quarters would you get?", 
             answer: "4",
             steps: ["Step 1: 100 pennies = 1 dollar.", "Step 2: How many quarters make up 1 dollar?", "Step 3: Count by 25s to 100."]
-        }
+        },
         { 
             type: 'money', text: "A shiny sticker costs 45 cents. You pay with 2 quarters. How much change do you get?", 
             answer: "5",
@@ -386,37 +377,23 @@
         questionText.innerText = q.text;
         inputArea.innerHTML = '';
         hintBox.style.display = 'none';
-    
-        // If it's a money question, add the $ symbol
-        if (q.type === 'money' || q.type === 'number') {
+        progressText.innerText = `Question ${currentIdx + 1} of ${questions.length}`;
+
+        if (q.type === 'number' || q.type === 'money') {
             if (q.type === 'money') {
-                const symbol = document.createElement('span');
-                symbol.innerText = '$';
-                symbol.style.fontSize = '3rem';
-                symbol.style.marginRight = '10px';
-                inputArea.appendChild(symbol);
+                const s = document.createElement('span'); s.innerText = '$'; s.style.fontSize = '3rem'; s.style.marginRight = '10px';
+                inputArea.appendChild(s);
             }
-    
             const input = document.createElement('input');
-            input.type = 'number'; 
-            input.id = 'answer'; 
-            input.placeholder = q.type === 'money' ? "0" : "?";
+            input.type = 'number'; input.id = 'answer'; input.placeholder = "?";
             inputArea.appendChild(input);
             input.focus();
-            
-            } else if (q.type === 'time') {
-            const hInput = document.createElement('input');
-            hInput.className = 'time-input'; hInput.id = 'hour'; hInput.placeholder = "H";
-            const sep = document.createElement('span');
-            sep.className = 'separator'; sep.innerText = ':';
-            const mInput = document.createElement('input');
-            mInput.className = 'time-input'; mInput.id = 'minute'; mInput.placeholder = "M";
-
-            inputArea.appendChild(hInput);
-            inputArea.appendChild(sep);
-            inputArea.appendChild(mInput);
+        } else if (q.type === 'time') {
+            const hInput = document.createElement('input'); hInput.className = 'time-input'; hInput.id = 'hour'; hInput.placeholder = "H";
+            const sep = document.createElement('span'); sep.className = 'separator'; sep.innerText = ':';
+            const mInput = document.createElement('input'); mInput.className = 'time-input'; mInput.id = 'minute'; mInput.placeholder = "M";
+            inputArea.appendChild(hInput); inputArea.appendChild(sep); inputArea.appendChild(mInput);
             hInput.focus();
-
             hInput.addEventListener('input', () => { if(hInput.value.length >= 1) mInput.focus(); });
         }
     }
@@ -425,12 +402,12 @@
         const q = questions[currentIdx];
         let isCorrect = false;
 
-        if (q.type === 'number') {
+        if (q.type === 'number' || q.type === 'money') {
             isCorrect = (document.getElementById('answer').value === q.answer);
-        } else {
+        } else if (q.type === 'time') {
             const h = document.getElementById('hour').value;
             const m = document.getElementById('minute').value;
-            isCorrect = (h == q.answerH && m == q.answerM);
+            isCorrect = (h == q.answerH && (m == q.answerM || (m == "0" && q.answerM == "00")));
         }
 
         if (isCorrect) {
@@ -438,26 +415,16 @@
             if (currentIdx < questions.length) {
                 loadQuestion();
             } else {
-                questionText.innerText = "🎉 You are a Math Wizard!";
-                inputArea.innerHTML = "";
-                progressText.innerText = "Game Complete!";
+                questionText.innerText = "🏆 You are an Engineering Math Wizard!";
+                inputArea.innerHTML = "✨✨✨";
+                progressText.innerText = "Challenge Complete!";
             }
         } else {
             container.classList.add('shake');
             setTimeout(() => container.classList.remove('shake'), 500);
-            showHint(q.steps);
+            hintSteps.innerHTML = q.steps.map(s => `• ${s}<br>`).join('');
+            hintBox.style.display = 'block';
         }
-    }
-
-    function showHint(steps) {
-        hintSteps.innerHTML = '';
-        steps.forEach(s => {
-            const div = document.createElement('div');
-            div.className = 'step';
-            div.innerText = "• " + s;
-            hintSteps.appendChild(div);
-        });
-        hintBox.style.display = 'block';
     }
 
     window.addEventListener('keydown', (e) => { if (e.key === 'Enter') checkAnswer(); });
