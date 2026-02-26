@@ -115,6 +115,96 @@
             answer: "49",
             steps: ["This is a Perfect Square!", "Multiply 7 x 7.", "7, 14, 21, 28, 35, 42, 49!"]
         }
+        { 
+            type: 'time', 
+            text: "The library opens at 9:00 AM. If you arrive 45 minutes late, what time is it?", 
+            answerH: "9", answerM: "45",
+            steps: ["Start at the opening time: 9:00.", "Add the 45-minute delay to the 00 minutes.", "Combine the hour and the new minutes."]
+        },
+        { 
+            type: 'time', 
+            text: "Lunch is at 12:00 PM. If it's 11:30 AM now, how many minutes until lunch? (Enter as 0:MM)", 
+            answerH: "0", answerM: "30",
+            steps: ["Look at the minutes now: 30.", "There are 60 minutes in a whole hour.", "Find the difference between 60 and 30."]
+        },
+        { 
+            type: 'time', 
+            text: "A cake takes 50 minutes to bake. You put it in at 2:05. What time will it be done?", 
+            answerH: "2", answerM: "55",
+            steps: ["Start with the minutes: 05.", "Add the baking time: 50 minutes.", "Check if 05 + 50 is less than 60."]
+        },
+        { 
+            type: 'time', 
+            text: "Soccer practice starts at 3:30 and ends at 4:30. How many minutes long is practice? (Enter as 1:00 for 60m)", 
+            answerH: "1", answerM: "00",
+            steps: ["Practice starts at 3:30.", "Practice ends at 4:30.", "How many 'whole hours' passed between 3 and 4?"]
+        },
+        { 
+            type: 'time', 
+            text: "You wake up at 7:10 AM. It takes 25 minutes to get ready. What time are you finished?", 
+            answerH: "7", answerM: "35",
+            steps: ["Start at 10 minutes.", "Add the 25 minutes for getting ready.", "Add the total minutes back to the 7 o'clock hour."]
+        },
+        { 
+            type: 'time', 
+            text: "The bus arrives at 8:15. It is now 8:05. How many minutes until the bus gets here? (Enter as 0:MM)", 
+            answerH: "0", answerM: "10",
+            steps: ["Identify the goal: 15 minutes.", "Identify where you are: 05 minutes.", "Subtract the smaller minutes from the larger minutes."]
+        },
+        { 
+            type: 'time', 
+            text: "A cartoon starts at 10:45 and is 15 minutes long. What time does it end?", 
+            answerH: "11", answerM: "00",
+            steps: ["Start at 45 minutes.", "Add 15 minutes: 45 + 15.", "Since the total is 60, move the hour up by 1!"]
+        },
+        { 
+            type: 'time', 
+            text: "Dinner will be ready in 20 minutes. It is 5:50 PM now. What time is dinner?", 
+            answerH: "6", answerM: "10",
+            steps: ["Start at 50 minutes.", "Add 10 minutes to reach 60 (the next hour).", "You still have 10 more minutes left of the 20!"]
+        },
+        { 
+            type: 'time', 
+            text: "You started reading at 6:15 and stopped at 6:45. How many minutes did you read? (Enter as 0:MM)", 
+            answerH: "0", answerM: "30",
+            steps: ["The hour (6) stayed the same.", "Compare the end minutes (45) and the start minutes (15).", "Subtract 15 from 45."]
+        },
+        { 
+            type: 'time', 
+            text: "If the clock shows 1:25, what time was it 10 minutes ago?", 
+            answerH: "1", answerM: "15",
+            steps: ["Look at the minutes: 25.", "Since we are going 'back in time,' we subtract.", "Subtract 10 from 25."]
+        },
+        { 
+            type: 'time', 
+            text: "The big hand is on the 6 and the little hand is between 2 and 3. What time is it?", 
+            answerH: "2", answerM: "30",
+            steps: ["When the big hand is on the 6, it represents 30 minutes.", "The little hand between 2 and 3 means it's past 2, but not yet 3.", "Combine the hour and minutes."]
+        },
+        { 
+            type: 'time', 
+            text: "A train leaves at 11:10 and the trip takes 40 minutes. What time does it arrive?", 
+            answerH: "11", answerM: "50",
+            steps: ["Start with the minutes: 10.", "Add the trip duration: 40.", "Put that total back with the 11 o'clock hour."]
+        },
+        { 
+            type: 'time', 
+            text: "It is 1:55. What time will it be in 5 minutes?", 
+            answerH: "2", answerM: "00",
+            steps: ["Add 5 to 55.", "A total of 60 minutes means the hour must click forward.", "What comes after 1?"]
+        },
+        { 
+            type: 'time', 
+            text: "Recess starts at 10:20 and lasts 25 minutes. What time does it end?", 
+            answerH: "10", answerM: "45",
+            steps: ["Identify the starting minutes: 20.", "Add the length of recess: 25.", "Add that sum to the 10 o'clock hour."]
+        },
+        { 
+            type: 'time', 
+            text: "You have an appointment at 4:10. You arrive at 3:55. How many minutes early are you? (Enter as 0:MM)", 
+            answerH: "0", answerM: "15",
+            steps: ["From 3:55, it takes 5 minutes to get to 4:00.", "From 4:00, it takes 10 minutes to get to 4:10.", "Add those two small jumps together."]
+        }
     ];
 
     let currentIdx = 0;
