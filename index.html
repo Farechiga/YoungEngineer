@@ -6,6 +6,16 @@
     <title>Young Engineer</title>
     <style>
         :root {
+
+        /* --- LOGO --- */
+        #puppy-logo {
+            position: absolute; top: 20px; left: 20px;
+            width: 150px; height: auto; z-index: 10;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            /* If the background is pure white, this removes it: */
+            mix-blend-mode: multiply;
+        }
+            
             --bg-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #9b59b6);
         }
 
@@ -26,15 +36,6 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
-        }
-
-        /* --- LOGO --- */
-        #puppy-logo {
-            position: absolute; top: 20px; left: 20px;
-            width: 150px; height: auto; z-index: 10;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
-            /* If the background is pure white, this removes it: */
-            mix-blend-mode: multiply;
         }
 
         #game-container {
